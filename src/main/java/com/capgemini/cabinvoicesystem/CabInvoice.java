@@ -6,7 +6,7 @@ public class CabInvoice {
 	private static final double COST_PER_MINUTE = 1;
 
 	public double getTotalFare(double distance, double time) {
-		return distance * COST_PER_KILOMETRE + time * COST_PER_MINUTE;
+		double calculatedFare = distance * COST_PER_KILOMETRE + time * COST_PER_MINUTE;
+		return Math.max(calculatedFare, 5.0);
 	}
-
 }
