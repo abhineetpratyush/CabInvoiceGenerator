@@ -17,4 +17,9 @@ public class CabInvoice {
 		}
 		return totalFare;
 	}
+
+	public InvoiceStructure getInvoice(RideInfo[] rides) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
