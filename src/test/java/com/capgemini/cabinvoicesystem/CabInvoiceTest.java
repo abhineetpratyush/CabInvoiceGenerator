@@ -39,5 +39,15 @@ public class CabInvoiceTest {
 		InvoiceStructure generatedInvoice = cabInvoiceGenerator.getInvoice(rides);
 		Assert.assertEquals(expectedInvoice, generatedInvoice);
 	}
+	
+	@Test
+	public void givenUserId_ShouldReturnInvoice() {
+		String userId = "abhineet@xyz.com";
+		RideInfo[] rides = {new RideInfo(20.0, 15.0), new RideInfo(0.2, 1.0)};
+		cabInvoiceGenerator.addRideDetailsToRideRepo(userId, rides);
+		InvoiceStructure expectedInvoice = new InvoiceStructure(2, 220.0);
+		InvoiceStructure generatedInvoice = cabInvoiceGenerator.getInvoice(userId);
+		Assert.assertEquals(expectedInvoice, generatedInvoice);
+	}
 }
 

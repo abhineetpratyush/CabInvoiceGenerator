@@ -22,4 +22,14 @@ public class CabInvoice {
 	public InvoiceStructure getInvoice(RideInfo[] rides) {
 		return new InvoiceStructure(rides.length, getTotalFare(rides));
 	}
+
+	public void addRideDetailsToRideRepo(String userId, RideInfo[] rides) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public InvoiceStructure getInvoice(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
