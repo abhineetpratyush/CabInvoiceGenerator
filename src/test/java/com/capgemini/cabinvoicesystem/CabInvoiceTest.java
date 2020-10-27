@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CabInvoiceTest {
+	
 	@Test
 	public void givenDistanceAndTimeRespectively_ShouldReturnCorrectFare() {
 		CabInvoice cabInvoiceGenerator = new CabInvoice();

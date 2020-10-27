@@ -1,7 +1,28 @@
 package com.capgemini.cabinvoicesystem;
 
 public class RideInfo {
-	public RideInfo(double d, double e) {
-		// TODO Auto-generated constructor stub
+	
+	private double distance;
+	private double time;
+	
+	public RideInfo(double distance, double time) {
+		this.distance = distance;
+		this.time = time;
 	}
-}
+	
+	public double getDistance() {
+		return distance;
+	}
+	
+	public void setDistance(double distance) {
+		this.distance = distance;
+	}
+	
+	public double getTime() {
+		return time;
+	}
+	
+	public void setTime(double time) {
+		this.time = time;
+	}
+}	

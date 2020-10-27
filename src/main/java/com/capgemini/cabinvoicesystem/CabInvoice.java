@@ -11,7 +11,10 @@ public class CabInvoice {
 	}
 
 	public double getTotalFare(RideInfo[] rides) {
-		// TODO Auto-generated method stub
-		return 0;
+		double totalFare = 0;
+		for(int ridesItr = 0; ridesItr < rides.length; ridesItr++) {
+			totalFare += getTotalFare(rides[ridesItr].getDistance(), rides[ridesItr].getTime());
+		}
+		return totalFare;
 	}
 }
