@@ -2,9 +2,11 @@ package com.capgemini.cabinvoicesystem;
 
 public class CabInvoice {
 
-	public double getTotalFare(double d, double e) {
-		// TODO Auto-generated method stub
-		return 0;
+	private static final double COST_PER_KILOMETRE = 10;
+	private static final double COST_PER_MINUTE = 1;
+
+	public double getTotalFare(double distance, double time) {
+		return distance * COST_PER_KILOMETRE + time * COST_PER_MINUTE;
 	}
 
 }
