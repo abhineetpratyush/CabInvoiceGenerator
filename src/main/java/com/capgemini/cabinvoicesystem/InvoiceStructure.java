@@ -11,18 +11,9 @@ public class InvoiceStructure {
 		this.totalFare = totalFare;
 		this.avgFarePerRide = totalFare / numOfRides;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(avgFarePerRide);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + numOfRides;
-		temp = Double.doubleToLongBits(totalFare);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		return result;
+	
+	public double getTotalFare() {
+		return totalFare;
 	}
 
 	@Override

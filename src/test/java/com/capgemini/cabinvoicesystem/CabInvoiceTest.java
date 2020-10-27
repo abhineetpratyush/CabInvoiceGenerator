@@ -15,20 +15,22 @@ public class CabInvoiceTest {
 	
 	@Test
 	public void givenDistanceAndTimeRespectively_ShouldReturnCorrectFare() {
-		double cabFare = cabInvoiceGenerator.getTotalFare(20.0, 15.0);
+		RideInfo ride = new RideInfo(RideCategory.NORMAL, 20.0, 15.0);
+		double cabFare = ride.getRideCategory().getTotalFareForARide(ride);
 		Assert.assertEquals(215.0, cabFare, 0);
 	}
 
 	@Test
 	public void givenDistanceAndTimeRespectively_ShouldReturnMinimumFare() {
-		double cabFare = cabInvoiceGenerator.getTotalFare(0.2, 1);
+		RideInfo ride = new RideInfo(RideCategory.NORMAL, 0.2, 1.0);
+		double cabFare = ride.getRideCategory().getTotalFareForARide(ride);
 		Assert.assertEquals(5.0, cabFare, 0);
 	}
 
 	@Test
 	public void givenMultipleRides_ShouldReturnAggregateTotal() {
 		RideInfo[] rides = {new RideInfo(RideCategory.NORMAL, 20.0, 15.0), new RideInfo(RideCategory.NORMAL, 0.2, 1.0)};
-		double cabFare = cabInvoiceGenerator.getTotalFare(rides);
+		double cabFare = cabInvoiceGenerator.getInvoice(rides).getTotalFare();
 		Assert.assertEquals(220.0, cabFare, 0);
 	}
 	
