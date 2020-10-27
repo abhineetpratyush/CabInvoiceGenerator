@@ -5,7 +5,7 @@ public class RideInfo {
 	private double distance;
 	private double time;
 	
-	public RideInfo(double distance, double time) {
+	public RideInfo(RideCategory normal, double distance, double time) {
 		this.distance = distance;
 		this.time = time;
 	}
