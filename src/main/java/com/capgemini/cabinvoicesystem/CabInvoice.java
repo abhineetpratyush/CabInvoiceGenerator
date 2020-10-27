@@ -9,4 +9,9 @@ public class CabInvoice {
 		double calculatedFare = distance * COST_PER_KILOMETRE + time * COST_PER_MINUTE;
 		return Math.max(calculatedFare, 5.0);
 	}
+
+	public double getTotalFare(RideInfo[] rides) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
