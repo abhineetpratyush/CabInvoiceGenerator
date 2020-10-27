@@ -1,11 +1,16 @@
 package com.capgemini.cabinvoicesystem;
 
 public class CabInvoice {
-
+	
+	private RideRepository rideRepo;
 	private static final double COST_PER_KILOMETRE = 10;
 	private static final double COST_PER_MINUTE = 1;
 	private static final double MIN_FARE = 5.0;
-
+	
+	public CabInvoice() {
+		this.rideRepo = new RideRepository();
+	}
+	
 	public double getTotalFare(double distance, double time) {
 		double calculatedFare = distance * COST_PER_KILOMETRE + time * COST_PER_MINUTE;
 		return Math.max(calculatedFare, MIN_FARE);
@@ -24,12 +29,10 @@ public class CabInvoice {
 	}
 
 	public void addRideDetailsToRideRepo(String userId, RideInfo[] rides) {
-		// TODO Auto-generated method stub
-		
+		this.rideRepo.addRidesAgainstUserId(userId, rides);
 	}
 
 	public InvoiceStructure getInvoice(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getInvoice(this.rideRepo.getRidesForUserId(userId));
 	}
 }
